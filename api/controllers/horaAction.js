@@ -1,17 +1,19 @@
 dataAction = () => {
-  const datefull = new Date();
-  const date = ("0" + datefull.getDate()).slice(-2);
-  const month = ("0" + (datefull.getMonth() + 1)).slice(-2);
-  const year = datefull.getFullYear();
-  const hours = datefull.getHours();
-  const minutes = datefull.getMinutes();
-  const seconds = datefull.getSeconds();
+  const date_obj = new Date();
+  const data =  date_obj.toLocaleString("pt-BR", {
+    hour12:false,
+    hour:"2-digit",
+    second:"2-digit",
+    second:"2-digit",
+    minute:"2-digit",
+    year:"2-digit",
+    month:"2-digit",
+    day:"2-digit",
+  });
 
   console.log(
-    "Realizado em: ",
-    date + "/" + month + "/" + year,
-    "as",
-    +hours + ":" + minutes + ":" + seconds
+    "Realizado em:",
+    data
   );
   console.log("===================");
 };
