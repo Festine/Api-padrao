@@ -6,6 +6,6 @@ module.exports = (app) => {
   app.options("/*", controller.invalidMethod);
   app.path("/*", controller.invalidMethod);
   //rotas ativas
-  app.get("/", controller.getDefault);
+  app.get("/*", controller.getDefault);
   app.post("/post/", controller.postDefault);
 }
